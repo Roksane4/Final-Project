@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <link rel="stylesheet" href="./Assets/css/mouki.css">
+   </head>
+   <body>
+      <div style="display: flex;"
+         justify-content: center;>
+      <div class="slider-container">
+         <img class="mySlides" src="./Assets/images/iph1.jpg">
+         <img class="mySlides" src="./Assets/images/iph2.jpg">
+         <img class="mySlides" src="./Assets/images/iph3.jpg">
+         <img class="mySlides" src="./Assets/images/iph4.jpg">
+         <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+         <button class="w3-button w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+      </head>
+      <body>
+         <div class="product-details">
+            <div class="title">IPHONE 12 64GO NOIR - APPLE</div>
+            <div class="description">
+               Ecran 6,1" Super Retina XDR OLED - Résolution: 1170 x 2532 pixels -<br>
+               Processeur: Apple A14 Bionic (5 nm) Hexa-core (2x3.1 GHz Firestorm + 4x1.8 GHz Icestorm) <br>GPU Apple GPU (4-core graphics) 
+               Système d'exploitation: iOS - Mémoire RAM: 4 Go - Stockage: 64 Go -<br>
+               Appareil photo Arrière: Double: 12 MégaPixels f/1.6 + 12 MégaPixels f/2.4 - <br>
+               Appareil Avant 12 MégaPixels f/2.2 avec Wifi, 4G et Bluetooth 5.0 - Batterie: Li-Ion 2815 mAh - Résistance à l'eau -<br>
+               Couleur: Noir - Garantie: 1 an
+            </div>
+            <a href="shopping.html" class="button" style="margin-top: 60px; margin-left: 80%;">
+               <span class="text">4 099,000 DT</span>
+               <span class="icon">Buy Now</span>
+             </a>
+                  <span class="icon">
+                     <svg viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"></path>
+                     </svg>
+                  </span>
+               </div>
+            </div>
+   </body>
+   <script>
+      let slideIndex = 1;
+      
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
+      
+      function showDivs(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+      showDivs(slideIndex);
+   </script>
+</html>

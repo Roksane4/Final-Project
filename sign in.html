@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap">
+  <style>
+    /* Global Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+      color: #373636;
+    }
+    /* Header Styles */
+    header {
+      background-color: #4f4848;
+      color: #fff;
+      text-align: center;
+      padding: 1rem 0;
+    }
+    .brand-logo h1 {
+      font-size: 2rem;
+    }
+    /* Main Content Styles */
+    .main-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      background-color: #f3efef;
+      box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      margin-top: 2rem;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: #555;
+    }
+    input[type="email"],
+    input[type="password"],
+    select,
+    input[type="radio"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 3px solid #ddd;
+      border-radius: 8px;
+    }
+    input[type="radio"] {
+      margin-right: 0.5rem;
+    }
+    /* Proceed Button Styles */
+    .proceed-button {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .proceed-btn {
+      background-color: #ff6600;
+      color: #fff;
+      padding: 0.6rem 1rem;
+      font-weight: bold;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .proceed-btn:hover {
+      background-color: #ff6600;
+    }
+    /* Success Message Styles */
+    .message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ec7b3e;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand-logo">
+      <h1><span style="color: #ff6600;">iSleek</span> <span style="color: #666;">Electronics</span></h1>
+    </div>
+  </header>
+
+  <div class="main-content">
+    <section class="login-section">
+      <h2>Login or Create an Account</h2>
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        
+      </form>
+    </section>
+
+    <section class="city-section">
+      <h2>Choose a City</h2>
+      <select id="city">
+          <option value="city1">Grand Tunis</option>
+          <option value="city2">Sousse</option>
+          <option value="city3">Monastir</option>
+          <option value="city4">Mahdia</option>
+          <option value="city5">Beja</option>
+          <option value="city6">Gasserine</option>
+          <option value="city3">Jandouba</option>
+          <option value="city3">Kairaouen</option>
+          <option value="city3">Gafsa</option>
+          <option value="city3">Sidi Bouzid</option>
+          <option value="city3">Zaghouan</option>
+          <option value="city3">Gabes</option>
+          <option value="city3">Mednine</option>
+          <option value="city3">Tataouine</option>
+          <option value="city3">Bizerte</option>
+          <option value="city3">Nabeul</option>
+          <option value="city3">Gbelli</option>
+          <option value="city3">Silyena</option>
+          <option value="city3">El Kef</option>
+        </select>
+    </section>
+
+      <section class="payment-method-section">
+        <h2>Choose Payment Method</h2>
+        <label>
+          <input type="radio" name="paymentMethod" value="creditCard" checked>
+          Carte de Crédits
+        </label>
+        <label>
+          <input type="radio" name="paymentMethod" value="paypal">
+          Chèque
+        </label> 
+        <label>
+          <input type="radio" name="paymentMethod" value="paypal">
+          Espèces
+        </label>
+      </section>
+
+    <div class="proceed-button">
+      <button class="proceed-btn" onclick="showSuccessMessage()">Proceed to Checkout</button>
+    </div>
+  </div>
+
+  <div class="message" id="successMessage">Successfully purchased! You will receive your product in 3 days.</div>
+  
+  <script>
+    function showSuccessMessage() {
+      var message = document.getElementById("successMessage");
+      message.style.display = "block";
+      setTimeout(function() {
+        message.style.opacity = "1";
+      }, 100);
+      setTimeout(function() {
+        message.style.opacity = "0";
+        setTimeout(function() {
+          message.style.display = "none";
+        }, 500);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
